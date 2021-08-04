@@ -579,3 +579,37 @@ footer {
   margin-left: auto;
   margin-bottom: 20px;
 }
+
+.backdrop {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 528px;
+  height: 580px;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+}
+
+.close-btn {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 8px;
+  right: 8px;
+  border-radius: 50%;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-color: transparent;
+  cursor: pointer;
+  padding: 0;
+}
