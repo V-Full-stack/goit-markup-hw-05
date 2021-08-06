@@ -23,6 +23,7 @@ body {
 }
 
 img {
+  display: block;
   width: 100%;
 }
 
@@ -37,6 +38,19 @@ ul {
   margin-top: 0;
   margin-bottom: 0;
   padding: 0;
+}
+
+button,
+button:active,
+button:focus,
+input,
+input:active,
+input:focus,
+textarea,
+textarea:active,
+textarea:focus {
+  outline: none;
+  border: none;
 }
 
 .header-list {
@@ -322,17 +336,19 @@ color: #2196F3; */
 
 .offers-wrap {
   position: relative;
+  width: 100%;
 }
 
-/* .offer-label {
+.offer-label {
+  display: block;
   font-weight: 700;
   font-style: normal;
-   position: absolute;
-  font-weight: bold;
-  padding: 27px 0;
-  width: 100%;
+  position: absolute;
   bottom: 0;
-  display: block;
+  font-weight: bold;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  width: 100%;
   font-size: 14px;
   line-height: 0.9;
   text-align: center;
@@ -340,7 +356,7 @@ color: #2196F3; */
   text-transform: uppercase;
   color: var(--secondary-text-color);
   background: rgba(47, 48, 58, 0.8);
-} */
+}
 
 /* OUR TEAM 4та секция */
 
@@ -597,6 +613,10 @@ footer {
 
 .modal {
   position: absolute;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
   left: 50%;
   top: 50%;
   width: 528px;
@@ -612,16 +632,17 @@ footer {
   align-items: center;
   width: 30px;
   height: 30px;
+  padding: 6px;
   top: 8px;
   right: 8px;
   border-radius: 50%;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2); */
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+  background-color: transparent;
   border-color: inset;
   cursor: pointer;
-  padding: 6;
 }
 
 .close-button-icon {
