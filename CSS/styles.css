@@ -62,7 +62,24 @@ textarea:focus {
   color: #212121;
 }
 
+.header-link:not(:last-child) {
+  margin-right: 50px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
 /* --- UNDERLINE --- */
+
+.nav-another::after {
+  transform: scaleX(0);
+  opacity: 0;
+}
+
+.nav-another:hover::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
 
 .menu-link {
   position: relative;
@@ -84,25 +101,19 @@ textarea:focus {
   background: #2196f3;
   border-radius: 2px;
   cursor: pointer;
-  opacity: 0;
-  transform: scaleX(0) scaleY(0);
+
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
     opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.menu-link:hover::after {
-  opacity: 1;
-  transform: scaleX(1) scaleY(1);
-}
-
 /* --- END UNDERLINE --- */
 
-.page-nav {
+/* .page-nav {
   display: flex;
   align-items: center;
   position: relative;
-  /* color: #212121; */
-}
+  color: #212121;
+} */
 
 .hero {
   /* background-color: var(--dark-bg); */
@@ -143,28 +154,32 @@ textarea:focus {
 } */
 
 .hero-btn {
-  /* display: flex; */
-  color: #fff;
-  background-color: #2196f3;
-
+  font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
-
+  text-align: center;
   cursor: pointer;
-
   border: none;
   padding: 10px 32px;
   font-family: Roboto;
   border-radius: 4px;
+  background-color: #2196f3;
+  color: var(--secondary-text-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.hero-btn:hover,
+.hero-btn:focus {
+  background-color: #188ce8;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .list {
+  display: flex;
   text-decoration: none;
   list-style: none;
-  display: flex;
   align-items: center;
 }
 
@@ -219,46 +234,55 @@ section {
 }
 
 .mail-link {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-  color: #212121;
   margin-right: 50px;
 }
 
-.menu-link.current {
+/* --- UNDERLINE --- */
+
+.menu-link.nav-current {
   color: var(--blue-color);
 }
 
-.menu-link {
-  text-decoration: none;
+.nav-another::after {
+  transform: scaleX(0);
+  opacity: 0;
+}
 
+.nav-another:hover::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.menu-link {
+  position: relative;
+  text-decoration: none;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.33;
   letter-spacing: 0.02em;
   color: #212121;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  /* font-family: Roboto;
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
-line-height: 16px;
-letter-spacing: 0.02em;
-
-color: #2196F3; */
+.menu-link::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 4px;
+  bottom: -32px;
+  background: #2196f3;
+  border-radius: 2px;
+  cursor: pointer;
+  /* transform: scaleX(0);
+  opacity: 0; */
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-link:hover,
 .menu-link:focus {
   color: var(--blue-color);
-}
-
-.header-link:not(:last-child) {
-  margin-right: 50px;
 }
 
 .top-down-contact {
@@ -267,6 +291,13 @@ color: #2196F3; */
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
+
+  font-style: normal;
+}
+
+.top-down-contact:hover,
+.top-down-contact:focus {
+  color: var(--blue-color);
 }
 
 /* --- >>> COMPONENTS <<< --- */
@@ -277,10 +308,9 @@ color: #2196F3; */
   fill: currentColor;
 }
 
-.tel-link .mail-link {
-  color: var(--blue-color);
-  font-style: normal;
-}
+/* .tel-link .mail-link {
+  /* color: var(--blue-color); */
+/* font-style: normal; */
 
 .link {
   font-size: 14px;
@@ -289,22 +319,6 @@ color: #2196F3; */
 }
 
 /* Czapka 1ша секция */
-
-.hero .hero-btn {
-  padding: 10px 32px;
-  text-align: center;
-  font-family: Roboto;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.06em;
-  border: none;
-  border-radius: 4px;
-  color: var(--secondary-text-color);
-  background-color: var(--blue-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  transition: background-color var(--main-duration) var(--timing-function);
-}
 
 .main-section {
   width: 1200px;
@@ -410,7 +424,7 @@ color: #2196F3; */
 
 .social-icons {
   margin-left: -10px;
-  margin-top: 16px;
+  /* margin-top: 16px; */
   display: flex;
   list-style: none;
   display: inline-flex;
@@ -478,10 +492,7 @@ color: #2196F3; */
 .team-member {
   padding: 30px 32px;
   /* position: absolute;
-  width: 270px;
-  height: 368px;
-  left: 215px;
-  top: 1635px; */
+*/
 }
 
 .about-name {
@@ -636,7 +647,7 @@ footer {
   margin-bottom: 20px;
 }
 
-/* MODAL */
+/* -- MODAL -- */
 
 .backdrop {
   position: fixed;
@@ -644,8 +655,7 @@ footer {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #fff(0, 0, 0, 0.7);
-
+  background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
